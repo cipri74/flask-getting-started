@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %} Cards {% endblock %}
+
+{% block content %}
+<body>
+    <a href="{{ url_for('add_card') }}"><b>Add new card</b></a>
+  <ul>
+    {% for card in cards%}
+      <li>
+          <a href="{{ url_for('card', index=card['id']) }}">Question: {{ card.question }}</a>
+          <button><a href="{{ url_for('remove_card', index=card.id) }}" >DELETE</a></button>
+          <button><a href="{{ url_for('edit_card', index=card.id) }}">EDIT</a></button><br><br>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

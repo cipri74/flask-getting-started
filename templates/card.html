@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %} Card {% endblock %}
+
+{% block content %}
+    <h1>Flash Card</h1>
+    Question: {{ card.question }}<br>
+    Answer: <b>{{ card.answer }}</b><br>
+    {% if index < max_idx%}
+        <a href="{{ url_for('card', index=index + 1) }}">Next</a><br>
+    {% else %}
+         <a href="{{ url_for('card', index=0) }}">Again</a><br>
+    {% endif %}
+    <a href="{{ url_for('welcome') }}">Home</a>
+{% endblock %}

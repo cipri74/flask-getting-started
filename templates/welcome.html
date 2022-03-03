@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %} Card {% endblock %}
+
+{% block content %}
+    <h1>Welcome to my page!</h1>
+    <p>
+        This is the demo application for the course
+        <em>Getting started with Flask</em>
+        on <a href="https://www.pluralsight.com">Pluralsight</a>
+    </p>
+    <img src="/static/flasklogo.png">
+    <p>
+        {{ message }}
+    </p>
+    <a href="{{ url_for('cards_list') }}">Go to CARDS</a>
+{% endblock %}
